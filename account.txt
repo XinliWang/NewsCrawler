@@ -1,2 +1,0 @@
-AMQP_URL = 'amqp://'
-API_KEY = '1'
