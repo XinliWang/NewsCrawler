@@ -4,3 +4,4 @@ redis
 hashlib
 requests
 dateutil
+sklearn
