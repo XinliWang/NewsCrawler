@@ -28,7 +28,7 @@ redis_client = redis.Redis(host = REDIS_HOST,
 # Connect CloudAMQP
 cloudAMQP_client = CloudAMQPClient(AMQP_URL, SCRAPE_NEWS_QUEUE_NAME)
 
-whlie True:
+while True:
     # GET NEWS API 的 news
     articles = news_api_client.getNewsFromSource(NEWS_SOURCE)
     # count how many new news need to be saved
