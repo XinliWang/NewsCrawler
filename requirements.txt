@@ -1,7 +1,7 @@
 pika
 pymongo
 redis
-hashlib
 requests
-dateutil
+python-dateutil
 sklearn
+pyyaml

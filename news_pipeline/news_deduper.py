@@ -1,14 +1,20 @@
 import os
 import sys
 import datetime
-from dateutil import parser
+from python-dateutil import parser
 from sklearn.feature_extraction.text import TfidfVectorizer
+import yaml
+
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'utils'))
 
 from cloudAMQP_client import CloudAMQPClient
 import mongodb_client
 
-AMQP_URL = ''
+# Read configuration file
+with open("../config.yml", 'r') as ymlfile:
+    config = yaml.load(ymlfile)
+
+AMQP_URL = config['AMQP_URL']
 DEDUPE_NEWS_QUEUE_NAME = 'top-news-dedupe-news-queue'
 SLEEP_TIME_OUT_IN_SECONDS = 1
 NEWS_TABLE_NAME = 'news'
