@@ -8,9 +8,3 @@
 1. News API: https://newsapi.org/
 2. Collect News from New York times.
 3. Message Queue: https://www.cloudamqp.com
-
-mkvirtualenv --no-site-packages goose
-git clone https://github.com/grangier/python-goose.git
-cd python-goose
-pip install -r requirements.txt
-python setup.py install
