@@ -4,14 +4,19 @@ import os
 import sys
 import hashlib
 import datetime
+import yaml
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'utils'))
 from cloudAMQP_client import CloudAMQPClient
 import news_api_client
 
+# Read configuration file
+with open("../config.yml", 'r') as ymlfile:
+    config = yaml.load(ymlfile)
+
 REDIS_HOST = 'localhost'
 REDIS_PORT = 6378
-AMQP_URL = ''
+AMQP_URL = config['AMQP_URL']
 SCRAPE_NEWS_QUEUE_NAME = 'top-news-scrape-news-queue'
 
 NEWS_TIME_OUT_IN_SECONDS = 3600 * 24
